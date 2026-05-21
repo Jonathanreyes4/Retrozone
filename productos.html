@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetroZone - Productos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>RetroZ</h1>
+    <nav>
+      <a href="dashboard.html">Inicio</a>
+      <a class="activo" href="productos.html">Productos</a>
+      <a href="inventario.html">Inventario</a>
+      <a href="ventas.html">Ventas</a>
+      <a href="alquileres.html">Alquileres</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="factura.html">Factura</a>
+      <a href="index.html">Salir</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Gestion de Productos</h2>
+
+    <form class="formulario" id="formProducto">
+      <input type="text" id="nombreProducto" placeholder="Nombre del producto">
+      <input type="text" id="categoriaProducto" placeholder="Categoria">
+      <input type="text" id="consolaProducto" placeholder="Consola">
+      <input type="number" id="precioProducto" placeholder="Precio">
+      <input type="number" id="stockProducto" placeholder="Stock">
+      <button type="submit">Guardar producto</button>
+    </form>
+
+    <p id="mensajeProducto"></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Consola</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaProductos">
+      </tbody>
+    </table>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

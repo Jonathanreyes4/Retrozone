@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetroZone - Inventario</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>RetroZ</h1>
+    <nav>
+      <a href="dashboard.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a class="activo" href="inventario.html">Inventario</a>
+      <a href="ventas.html">Ventas</a>
+      <a href="alquileres.html">Alquileres</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="factura.html">Factura</a>
+      <a href="index.html">Salir</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Inventario</h2>
+    <p>Control simple de unidades disponibles.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Producto</th>
+          <th>Categoria</th>
+          <th>Stock</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody id="tablaInventario">
+        <tr>
+          <td>001</td>
+          <td>Nintendo 64</td>
+          <td>Consola</td>
+          <td>3</td>
+          <td class="ok">Disponible</td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>Memory Card PS1</td>
+          <td>Accesorio</td>
+          <td>0</td>
+          <td class="mal">Agotado</td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>Pokemon Yellow</td>
+          <td>Videojuego</td>
+          <td>1</td>
+          <td class="alerta">Bajo stock</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box">
+      <h3>Conexion a base de datos</h3>
+      <p>Esta pagina puede cargar productos desde MySQL usando el archivo <b>server.js</b> y la ruta <b>/api/inventario</b>.</p>
+      <button id="btnCargarInventario">Probar carga desde base de datos</button>
+      <p id="mensajeInventario"></p>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
