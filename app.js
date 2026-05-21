@@ -24,7 +24,7 @@ async function cargarProductosVenta() {
     return;
   }
 
-  const respuesta = await fetch("http://localhost:3000/api/inventario");
+  const respuesta = await fetch("/api/inventario");
   const productos = await respuesta.json();
 
   productoVenta.innerHTML = "";
@@ -77,7 +77,7 @@ if (registrarVenta) {
 
     mensaje.textContent = "Registrando venta...";
 
-    const respuesta = await fetch("http://localhost:3000/api/ventas", {
+    const respuesta = await fetch("/api/ventas", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -104,7 +104,7 @@ async function cargarHistorialVentas() {
     return;
   }
 
-  const respuesta = await fetch("http://localhost:3000/api/ventas");
+  const respuesta = await fetch("/api/ventas");
   const ventas = await respuesta.json();
 
   tabla.innerHTML = "";
@@ -134,7 +134,7 @@ async function cargarInventario() {
     mensaje.textContent = "Intentando conectar con la base de datos...";
 
     try {
-      const respuesta = await fetch("http://localhost:3000/api/inventario");
+      const respuesta = await fetch("/api/inventario");
       const datos = await respuesta.json();
 
       tabla.innerHTML = "";
@@ -184,7 +184,7 @@ async function cargarProductos() {
   }
 
   try {
-    const respuesta = await fetch("http://localhost:3000/api/inventario");
+    const respuesta = await fetch("/api/inventario");
     const productos = await respuesta.json();
 
     tabla.innerHTML = "";
@@ -222,7 +222,7 @@ if (formProducto) {
       stock: document.getElementById("stockProducto").value
     };
 
-    const respuesta = await fetch("http://localhost:3000/api/productos", {
+    const respuesta = await fetch("/api/productos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -245,7 +245,7 @@ if (formProducto) {
 }
 
 async function eliminarProducto(id) {
-  const respuesta = await fetch("http://localhost:3000/api/productos/" + id, {
+  const respuesta = await fetch("/api/productos/" + id, {
     method: "DELETE"
   });
 
@@ -263,7 +263,7 @@ async function cargarClientes() {
     return;
   }
 
-  const respuesta = await fetch("http://localhost:3000/api/clientes");
+  const respuesta = await fetch("/api/clientes");
   const clientes = await respuesta.json();
 
   tabla.innerHTML = "";
@@ -291,7 +291,7 @@ if (formCliente) {
       correo: document.getElementById("correoCliente").value
     };
 
-    const respuesta = await fetch("http://localhost:3000/api/clientes", {
+    const respuesta = await fetch("/api/clientes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
